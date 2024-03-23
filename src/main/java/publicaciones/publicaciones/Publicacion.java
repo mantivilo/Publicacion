@@ -1,17 +1,18 @@
 package publicaciones.publicaciones;
 
+import java.util.List;
+import java.util.Map;
+
 public class Publicacion {
     private int id;
-    private String titulo;
-    private String contenido;
-    private String comentarios;
-    private int calificaciones;
+    private List<Comentario> publicacion;
+    private Map<String, List<Double>> calificaciones;
 
-    public Publicacion(int id, String titulo,String contenido, String comentarios, int calificaciones){
+    public Publicacion(int id,List<Comentario> publicacion,
+         Map<String, List<Double>> calificaciones){
+
         this.id = id;
-        this.titulo = titulo;
-        this.contenido = contenido;
-        this.comentarios = comentarios;
+        this.publicacion = publicacion;
         this.calificaciones = calificaciones;
     }
 
@@ -20,19 +21,11 @@ public class Publicacion {
         return id;
     }
 
-    public String getTitulo(){
-        return titulo;
+    public List<Comentario> getpublicacion(){
+        return publicacion;
     }
 
-    public String getContenido(){
-        return contenido;
-    }
-
-    public String getComentarios(){
-        return comentarios;
-    }
-
-    public int getCalificaciones(){
+    public Map<String, List<Double>> getCalificaciones(){
         return calificaciones;
     }
 
@@ -40,3 +33,5 @@ public class Publicacion {
 
 
 }
+
+
